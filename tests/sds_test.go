@@ -10,12 +10,17 @@ import (
 
 var _ bool = Describe("Sds", func() {
 
+	BeforeEach(func() {
+		token = GetToken()
+		fmt.Println(token)
+	})
+
 	resp, err := resty.R().
 		SetHeaders(
 			map[string]string{
 				//"Content-Type": "application/json",
 				"LOG_USER":     "admin",
-				"X-Auth-Token": GetToken(),
+				"X-Auth-Token": token,
 			}).
 		Get(SDSPreURL + "softwareversion")
 	if err != nil {
