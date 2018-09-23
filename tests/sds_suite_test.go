@@ -15,6 +15,12 @@ func TestSds(t *testing.T) {
 	RunSpecs(t, "Sds Suite")
 }
 
+var (
+	TokenPreURL = "http://10.121.8.95:5000/v2.0/"
+	Token       = ""
+	SDSPreURL   = "http://10.121.8.95:9999/v1/"
+)
+
 var _ = BeforeSuite(func() {
 	resp, err := resty.R().
 		SetHeader("Content-Type", "application/json").
@@ -33,7 +39,7 @@ var _ = BeforeSuite(func() {
 	}
 
 	fmt.Println(resp)
-	SetToken(gjson.Get(resp.String(), "access.token.id").String())
+	Token = gjson.Get(resp.String(), "access.token.id").String()
 	fmt.Printf("get sds token: %s", Token)
 	//value := gjson.Get(resp.String(), "access.token.id")
 	//fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++")
