@@ -34,7 +34,7 @@ var _ = BeforeSuite(func() {
 	}
 
 	fmt.Println(resp)
-	Token = gjson.Get(resp.String(), "access.token.id").String()
+	SetToken(gjson.Get(resp.String(), "access.token.id").String())
 	fmt.Printf("get sds token: %s", Token)
 	//value := gjson.Get(resp.String(), "access.token.id")
 	//fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++")

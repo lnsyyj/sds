@@ -5,3 +5,11 @@ var (
 	Token       = ""
 	SDSPreURL   = "http://10.121.8.95:9999/v1/"
 )
+
+func SetToken(token string) {
+	Token = token
+}
+
+func GetToken() string {
+	return Token
+}

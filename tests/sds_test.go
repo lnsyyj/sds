@@ -16,7 +16,7 @@ var _ bool = Describe("Sds", func() {
 			map[string]string{
 				//"Content-Type": "application/json",
 				"LOG_USER":     "admin",
-				"X-Auth-Token": Token,
+				"X-Auth-Token": GetToken(),
 			}).
 		Get(SDSPreURL + "softwareversion")
 	if err != nil {
