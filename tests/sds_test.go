@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/go-resty/resty"
-	. "github.com/lnsyyj/sds/config"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
